@@ -2,7 +2,7 @@ library(ggplot2)
 library(plotly)
 library(gapminder)
 
-foundation_dataset <- read.csv("https://raw.githubusercontent.com/info-201b-sp24/exploratory-analysis-Aisha03792/main/shades.csv")
+foundation_dataset <- read.csv("shades (1).csv")
 
 #filtering data just to get the two brands!
 
@@ -40,7 +40,6 @@ p <- gapminder %>%
   ggtitle("Fenty vs. Mac: Saturation Level Differences")
 ggplotly(p)
 
-nigerian_brands <- subset(foundation_dataset, brand %in% c("House of Tara", "Hegai and Ester"))
 
 p <- gapminder %>%
   ggplot(nigerian_brands, aes(x = product,

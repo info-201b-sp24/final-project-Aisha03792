@@ -1,9 +1,8 @@
 
 
+library(ggplot2)
 
-
-foundation_dataset <- read.csv("https://raw.githubusercontent.com/info-201b-sp24/exploratory-analysis-Aisha03792/main/shades.csv")
-
+foundation_dataset <- read.csv("shades (1).csv")
 #filtering data just to get the two brands!
 
 
