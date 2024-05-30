@@ -1,9 +1,3 @@
-library(shiny)
-library(ggplot2)
-library(plotly)
-library(gapminder)
-library(rsconnect)
-
 ui <- navbarPage(
   title = "Final Info project",
   theme = shinythemes::shinytheme("cosmo"),
@@ -112,8 +106,6 @@ ui <- navbarPage(
            )
   )
 )
-
-
 server <- function(input, output, session) {
   
   # Define a reactive expression to filter data based on selected brands
@@ -174,5 +166,3 @@ server <- function(input, output, session) {
     ggplotly(p2)
   })
 }
-
-shinyApp(ui = ui, server = server)
