@@ -6,7 +6,7 @@ library(plotly)
 
 
 # Load the dataset
-foundation_dataset <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/makeup-shades/shades.csv")
+foundation_dataset <- read.csv("shades (1).csv")
 
 
 #  UI
