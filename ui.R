@@ -121,7 +121,6 @@ ui <- navbarPage(
            )
   ),
 
-
 tabPanel("Conclusion",
          mainPanel(
            h2("Main Takeaways"),
