@@ -58,6 +58,9 @@ Popular shade ranges vary based on regional location and popular demographic as 
 
 **Fenty has a larger hue range than MAC. MAC has a largest hue number.** 
 
+Hue range is the spectrum of different shades that a brand offers hence a larger hue range of a brand implies that the brand covers a wide variety of skin tones and undertones like cool, warm and neutral. Fenty Beauty for example is known for its extensive hue range and offers shades that cater to very light, dark and medium shades with sevral undertones. Fenty's Strength lies in its ability to cater to a broader, more diverse range of skin tones. More people who struggle to find their shade can rely on Fenty due to this. MAC's strength is in its large variety of shades. An individual can create a match to their skin tone and undertone by mixing the shades. 
+
+
 **The highest saturation level was found in Fenty at 0.79 in a 0-1 range.**
 
 Lightness scale is based on 10 point range between shade categories ranging from 0-100. The shades are categorized in ascending order with the darkest shade at the beginning (0-10).
