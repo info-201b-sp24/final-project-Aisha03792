@@ -17,7 +17,7 @@ unified_data_table.R
 read.csv("unified_shades.csv")
 
 
-**Link to our website: https://aishaa07393.shinyapps.io/final-project1-Aisha03792//**
+**Link to our website: https://aishaa07393.shinyapps.io/final-project1-Aisha03792/**
 
 
 # Introduction
