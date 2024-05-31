@@ -20,7 +20,7 @@ ipsa_data <- subset(foundation_dataset, brand %in% c("IPSA"))
 Lakmé_data <- subset(foundation_dataset, brand %in% c("Lakmé"))
 LotusHerbals_data <- subset(foundation_dataset, brand %in% c("Lotus Herbals"))
 
-japans_brands <- subset(foundation_dataset, brand %in% c("Ipsa", "Addiction"))
+japans_brands <- subset(foundation_dataset, brand %in% c("IPSA", "Addiction"))
 nigerian_brands <- subset(foundation_dataset, brand %in% c("House of Tara", "Hegai and Ester"))
 
 american_brands <- subset(foundation_dataset, brand %in% c("Fenty", "MAC"))
