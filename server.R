@@ -98,7 +98,7 @@ server <- function(input, output, session) {
 
 
 
-# Lightness of foundation server logic
+# Lightness of foundation server for interactive 1 page
 
 server <- function(input, output) {
   filtered_data <- reactive({
@@ -119,3 +119,24 @@ server <- function(input, output) {
     ggplotly(p, tooltip = "text")
   })
 }
+
+# Server for interactive page 2
+
+server <- function(input, output) {
+  
+  # Create the box plot
+  output$BoxPlot <- renderPlotly({
+    filtered_values <- subset(foundation_dataset, brand %in% input$brandSelection)
+    p2 <- ggplot(filtered_values, aes(x=brand, y=H, fill=brand)) +
+      geom_boxplot() +
+      theme_minimal() +
+      labs(title="Box Plot of Hue for Selcted Foundation Brands", x="Brand", y="Hue")
+    ggplotly(p2)
+    
+  })
+}
+
+
+
+
+
