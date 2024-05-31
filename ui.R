@@ -8,9 +8,12 @@ ui <- navbarPage(
   title = "Final Info project",
   theme = shinythemes::shinytheme("cosmo"),
   tabPanel("Introduction",
+           br(),
+           tags$img(src = 'Info_final_Image.png', height = 400, width = 400),
            mainPanel(
              h2("Diversity in the Makeup Industry (How Can The Industry Improve?)"),
-             img(src = "Info_final_Image.jpg", height = "400px", width = "400px", align = "center"),
+             
+             
              p("Our project is focused on the inclusivity of foundation ranges with two brands such as Fenty Beauty and Mac. For many years, there has been ongoing demand and concerns regarding inclusivity in the beauty industry. It is common knowledge, how diversity is glaringly insufficient and undesirable in today's progressive society. The darker shades of foundation on the color spectrum are usually limited and not many people of color have access to a wider range of shades within their skin tone. Despite people of color perpetually voicing their concerns about the lack of diversity. Unfortunately, many well-known brands disregard these claims and instead, they consistently cater to a lighter range of skin tones. No matter how many times consumers raise their voices, it has become apparent that disregarding the inclusivity of a certain population is a very detrimental oversight. Considering the fact that customers can wield their purchasing power anytime for a change. After many years, now the beauty industry is slowly evolving and some changes have been pioneered with brands like Fenty Beauty. Especially brands like Fenty Beauty a Black-owned brand, is known for advocating for inclusivity and her foundation ranges are more diverse than any other brands."),
              p("The objective of this project is to conduct an analysis of the foundation shade offerings between two highly sought and leading cosmetic brands, Fenty Beauty (Black owned brand) and Mac Cosmetics (White owned brand). We are collecting and analyzing our data from, The Pudding: Beauty Brawl. We intend to evaluate the elements within foundation shade coloring that leads to a more diverse and inclusive range of foundation shades by evaluating the Saturation, Hues, and Lightness range of the brand shades."),
              h4("Original Data:"), 
@@ -67,7 +70,10 @@ ui <- navbarPage(
              titlePanel("Saturations Differences across Brands!"),
              sidebarLayout(
                sidebarPanel(
-                 p("The chart attempts to visualize and understand the difference between saturation from companies of different regions across the globe, touching bases in America, Nigeria, and Japan. I am to reveal patterns and variations in the undertones and diversity of saturation between all these brands.Presenting the data in a bubble chart makes it easy to intuitively understand and creatively observe the divergence of observations, which is presented by the size and density of bubbles.The range of bubble sizes shows the variation in saturation levels offered by different companies. Larger bubbles represent higher saturation and smaller bubbles represent lower saturation levels. These charts are helpful in understanding the variation in saturation levels and make it easy to identify which company provided the more diverse bubble for a group of people."),
+                 p("The chart attempts to visualize and understand the difference between saturation from companies of different regions across the globe, touching bases in America, Nigeria, India, and Japan. This page attempts to reveal patterns of variation of saturation density and of the diversity of saturation between all these brands."),
+                 p("Presenting the data in a bubble chart makes it easy to intuitively understand and creatively observe the divergence of observations, which is presented by the size and density of bubbles. The range of bubble sizes shows the variation in saturation levels offered by different companies. Larger bubbles represent higher saturation and smaller bubbles represent lower saturation levels. These charts help understand the variation in saturation levels and make it easy to identify which company provided the more diverse bubble for a group of people."),
+                 p("The Questions I am trying to answer:"),
+                 
                  selectInput("category_select",
                              "Select a Category:",
                              choices = list(
@@ -89,28 +95,45 @@ ui <- navbarPage(
                                  "India Comparison")
                              ),
                              selected = "Select Category"
-                 ),
+                 )
                ),
                mainPanel(
-                 plotlyOutput("Selected_chart")
+                 plotlyOutput("Selected_chart"),
                  
+                 conditionalPanel(
+                   condition = "input.category_select == 'Fenty'",
+                   p("In this graph, we are observing Fenty Beauty. When we zoom out, we can observe that Fenty’s bubble chart is a heavily density population, this represents that this company has alot of saturation options and those options are of high levels.")
+                 ),
+                 conditionalPanel(
+                   condition = "input.category_select == 'Mac'",
+                   p("In this graph, we are observing Mac Cosmetics. When we zoom out, we can observe that Mac had a diverse population of saturation but those bubbles don’t go as high as Fenty’s bubble. Let's move on the the American Comparison to see this more clearly. ")
+                 ),
+                 conditionalPanel(
+                   condition = "input.category_select == 'America Comparison'",
+                   p("In this graph we care observing Fenty and Mac, both american based companies.")
+                 ),
+                 conditionalPanel(
+                   condition = "input.category_select == 'House of Tara'",
+                   p("In this graph we can observe that House of Tara .")
+                 )
                )
              )
            )
   ),
-  
-  tabPanel("Conclusion",
-           mainPanel(
-             h2("Main Takeaways"),
-             p("There is a divide between white and black owned makeup companies when it comes to foundation shade. Through our research we attempt to answer the question of the varying shades in brand. Connecting the number of shades available with the diversity of a brand. Our analysis revealed that in 2018, Fenty, a black owned business, is more diverse than MAC. Fenty, along with their 42 shades of foundation to MAC’s 40 shade allows for not only a larger range of shades to choose from but a difference in shade variety through varying undertones."),
-             h3("Taking a further look at the data:"),
-             p("Fenty has the highest (94) and lowest (25) lightness score when it comes to their foundation shades."),
-             p("Fenty uses a total of 13 unique types of hues, while MAC uses 14."),
-             p("The highest saturation level was found in Fenty at 0.79 in a 0-1 range."),
-             p("Lightness scale is based on 10 point range between shade categories ranging from 0-100. The shades are categorized in ascending order with the darkest shade at the beginning (0-10). When evaluating the Hue, we pulled the highest and lowest number when evaluating shade range. Hue indicates the color used in the undertone of the foundation, which plays a direct role in shade variety when paired with saturation. This alone cannot tell whether a brand has a more diverse shade range as saturation plays a large role in the overall shade color. When it comes to the saturation we searched for the highest value to indicate which shade offers the darker shades in association to the hue. Saturation is the strength in which the hue color appears."),
-             p("Overall, Fenty, a Black owned brand, shows the most diverse range of foundation in regards to not only foundation color but the variety of undertones their foundation caters towards. Inclusivity in foundation shade is not based on the color itself but the undertones catered towards. Brands who take better care and notice the layers that go into making their shade show a larger range of shade diversity than those who do not. BIPOC owned brands through our data research show a more diverse range when taking these other elements into account."),
-           )
-  )
+
+
+tabPanel("Conclusion",
+         mainPanel(
+           h2("Main Takeaways"),
+           p("There is a divide between white and black owned makeup companies when it comes to foundation shade. Through our research we attempt to answer the question of the varying shades in brand. Connecting the number of shades available with the diversity of a brand. Our analysis revealed that in 2018, Fenty, a black owned business, is more diverse than MAC. Fenty, along with their 42 shades of foundation to MAC’s 40 shade allows for not only a larger range of shades to choose from but a difference in shade variety through varying undertones."),
+           h3("Taking a further look at the data:"),
+           p("Fenty has the highest (94) and lowest (25) lightness score when it comes to their foundation shades."),
+           p("Fenty uses a total of 13 unique types of hues, while MAC uses 14."),
+           p("The highest saturation level was found in Fenty at 0.79 in a 0-1 range."),
+           p("Lightness scale is based on 10 point range between shade categories ranging from 0-100. The shades are categorized in ascending order with the darkest shade at the beginning (0-10). When evaluating the Hue, we pulled the highest and lowest number when evaluating shade range. Hue indicates the color used in the undertone of the foundation, which plays a direct role in shade variety when paired with saturation. This alone cannot tell whether a brand has a more diverse shade range as saturation plays a large role in the overall shade color. When it comes to the saturation we searched for the highest value to indicate which shade offers the darker shades in association to the hue. Saturation is the strength in which the hue color appears."),
+           p("Overall, Fenty, a Black owned brand, shows the most diverse range of foundation in regards to not only foundation color but the variety of undertones their foundation caters towards. Inclusivity in foundation shade is not based on the color itself but the undertones catered towards. Brands who take better care and notice the layers that go into making their shade show a larger range of shade diversity than those who do not. BIPOC owned brands through our data research show a more diverse range when taking these other elements into account."),
+         )
+)
 )
 
 
@@ -144,11 +167,12 @@ server <- function(input, output, session) {
       theme_minimal() +
       labs(title="Box Plot of Hue for Selcted Foundation Brands", x="Brand", y="Hue")
     ggplotly(p2)
+    
   })
   
   
-  # Render saturation plot for selected brand
   output$Selected_chart <- renderPlotly({
+    
     data <- switch(input$category_select,
                    "Fenty" = fenty_data,
                    "Mac" = mac_data,
