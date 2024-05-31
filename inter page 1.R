@@ -5,7 +5,7 @@ library(plotly)
 
 
 
-# Load the dataset
+# Load the Dataset
 foundation_dataset <- read.csv("shades (1).csv")
 
 
